@@ -2,19 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next){
-  try {
-    req.db.query('SELECT * FROM todos;', (err, results) => {
-      if (err) {
-        console.error('Error fetching todos:', err);
-        return res.status(500).send('Error fetching todos');
-      }
-      res.render('landing', { title: 'Landing Page', todos: results });
-    });
-  } catch (error) {
-    console.error('Error fetching items:', error);
-    res.status(500).send('Error fetching items');
-  }
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Landing Page' });
 });
 
 router.post('/create', function (req, res, next) {

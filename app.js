@@ -1,12 +1,9 @@
 const express = require('express');
 const path = require('path');
-const { dbMiddleware} = require('./bin/db');
-
-
 const indexRouter    = require('./routes/index');    // handles "/"
 const menuRouter     = require('./routes/menu');     // handles "/menu"
 const aboutRouter    = require('./routes/about');    // handles "/about"
-const commentsRouter = require('./routes/comments'); // handles "/comments"
+const commenmtsRouter = require('./routes/commenmts'); // handles "/commenmts"
 //add more handlers here
 
 const app = express();
@@ -19,8 +16,7 @@ app.set('view engine', 'pug');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(dbMiddleware);
-app.use('/comments', commentsRouter); // all /comments/* URLs
+app.use('/commenmts', commenmtsRouter); // all /commenmts/* URLs
 app.use('/menu',     menuRouter);     // all /menu/* URLs
 app.use('/about',    aboutRouter);    // all /about/* URLs
 app.use('/',         indexRouter);    // the homepage and any /* fallthrough
