@@ -2,20 +2,20 @@ const express = require('express');
 const router = express.Router();
 const { dbMiddleware } = require('../bin/db');
 
-/* GET commenmts page. */
+/* GET comments page. */
 router.get('/', dbMiddleware, function(req, res, next) {
   req.db.query('SELECT * FROM todos;', (err, results) => {
     if (err) {
-      console.error('Error fetching commenmts:', err);
-      return res.render('commenmts', {
-        title: 'Commenmts',
-        error: 'Could not load commenmts from the database.',
+      console.error('Error fetching comments:', err);
+      return res.render('comments', {
+        title: 'Comments',
+        error: 'Could not load comments from the database.',
         items: []
       });
     }
 
-    res.render('commenmts', {
-      title: 'Commenmts',
+    res.render('comments', {
+      title: 'Comments',
       items: results
     });
   });

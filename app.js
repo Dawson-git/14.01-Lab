@@ -3,7 +3,7 @@ const path = require('path');
 const indexRouter    = require('./routes/index');    // handles "/"
 const menuRouter     = require('./routes/menu');     // handles "/menu"
 const aboutRouter    = require('./routes/about');    // handles "/about"
-const commenmtsRouter = require('./routes/commenmts'); // handles "/commenmts"
+const commentsRouter = require('./routes/comments'); // handles "/comments"
 //add more handlers here
 
 const app = express();
@@ -16,7 +16,7 @@ app.set('view engine', 'pug');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/commenmts', commenmtsRouter); // all /commenmts/* URLs
+app.use('/comments', commentsRouter); // all /comments/* URLs
 app.use('/menu',     menuRouter);     // all /menu/* URLs
 app.use('/about',    aboutRouter);    // all /about/* URLs
 app.use('/',         indexRouter);    // the homepage and any /* fallthrough
@@ -27,7 +27,8 @@ app.use((req, res) => {
   res.status(404).render('error', {
     title:   'Page Not Found',
     message: 'We couldn\'t find that page.',
-    detail:  'It may have been moved or deleted.'
+    detail:  'It may have been moved or deleted.',
+    error: { status: 404, stack: '' }
   });
 });
 
@@ -41,7 +42,8 @@ app.use((err, req, res, next) => {
     title:   'Something went wrong',
     message: 'An unexpected error occurred.',
     // Only show technical detail in development, not production.
-    detail:  app.get('env') === 'development' ? err.message : ''
+    detail:  app.get('env') === 'development' ? err.message : '',
+    error: app.get('env') === 'development' ? err : { status: err.status || 500, stack: '' }
   });
 });
 

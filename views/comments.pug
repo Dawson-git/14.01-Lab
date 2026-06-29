@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  h1= title
+  if error
+    p.error= error
+  else if items && items.length
+    p Database content loaded for this page:
+    ul
+      each item in items
+        li= item.task
+  else
+    p No comments are available yet.
+
+block content
+  h1= title
+  p Share your thoughts about our donuts below.
+  form(method='post' action='/comments')
+    label(for='name') Name:
+    input(type='text' id='name' name='name' required)
+    label(for='comment') Comment:
+    textarea(id='comment' name='comment' required)
+    button(type='submit') Submit Comment
