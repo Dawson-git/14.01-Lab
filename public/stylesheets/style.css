@@ -1,14 +1,29 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px "Montserrat Regular";
   margin: 0;
 }
 
 .landing-header {
+  padding: 20px;
   background-color: #10291D;
-  font-size: 24px;
-  font: "Italianno Regular";
   color: #F7F7F7;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-content img {
+  width: 120px;
+  height: auto;
+}
+
+.header-content p {
+  margin: 0;
+  font-size: 24px;
+  font-family: "Italianno Regular", cursive;
 }
 
 a {

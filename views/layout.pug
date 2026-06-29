@@ -1,8 +1,57 @@
 doctype html
-html
+html(lang="en")
   head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
-    block content
-  <p>hi from the server</p>
+    header.site-header
+      nav.nav(aria-label="Main Navigation")
+
+        a.nav_logo(href="/") Downtown Donuts 
+
+        button.nav_toggle(aria-label="Toggle navigation menu" aria-expanded="false")
+          //burger lines
+          span
+          span
+          span
+
+        ul.nav_links
+          li: a(href="/") Home
+          li: a(href="/menu") Menu
+          li: a(href="/about") Our Story
+          li: a(href="/comments") Comments
+          li: a.nav__order-btn(href="#order") Order Now
+
+    main
+      block content
+      footer.site-footer
+        .footer__inner
+
+          .footer__brand
+            //- TODO: Brand 
+            //- TODO: Tagline: "Family-owned since 1992"
+
+          .footer__links
+            h3 Order Online
+            ul
+              //- TODO: Add links to UberEats, DoorDash, Grubhub
+              //- These can be placeholder "#" URLs for now
+
+          .footer__links
+            h3 Visit Us
+            ul
+              //- TODO: Add address lines and opening hours
+
+          .footer__links
+            h3 Connect
+            ul
+              //- TODO: Add links to Menu, Our Story, Comments
+
+        //- Copyright line
+        p.footer__copy &copy; 2026 Downtown Donuts. All rights reserved.
+
+
+    //- Load client-side JavaScript 
+    script(src="/js/main.js")
