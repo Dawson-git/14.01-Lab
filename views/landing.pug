@@ -1,0 +1,23 @@
+// Basic Pug template structure
+// 1. Extend a layout if you want shared page structure
+// extends layout
+
+// 2. Define a block for content
+// block content
+//   h1 Welcome
+//   p This is your landing page.
+
+// 3. You can also write plain HTML-like Pug directly
+doctype html
+html
+  head
+    title Landing Page
+    meta(charset='utf-8')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    header.landing-header
+      img(src='/images/YellowLogo.png', alt='Logo')
+    main
+    h1 Welcome to the Landing Page
+    p This is a basic Pug file starter.
+    p Add your content here.
