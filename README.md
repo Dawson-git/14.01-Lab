@@ -8,6 +8,15 @@
 
 A prototype website for Downtown Donuts. Built with Node.js. This website is for a small donut shop that allows users to read about the shop, view the menu, and see comments from other users. The site is built to be semi-modular, with the ability to easily add new menu items in the backend code. The backend is built with Express, and the comments feature uses a MariaDB SQL database to store and retrieve customer comments. All CSS styling is written by hand and does not use any frameworks. Please read the following instructions carefully because some of the setup only needs to be done once.
 
+
+## Edge Cases
+
+1. What happens if the server/API is unreachable? (The UI should display a friendly
+message, not break.)
+2. What happens if a user submits a comment with only whitespace?
+3. What happens if a user submits extremely long input (e.g., 10,000 characters)?
+4. What happens if the user rapidly double-clicks the submit button?
+
 ## Install the Database
 
 To set up the database, run the `install_db.sh` script in the setup_scripts
