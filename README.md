@@ -12,10 +12,10 @@ A prototype website for Downtown Donuts. Built with Node.js. This website is for
 ## Edge Cases
 
 1. What happens if the server/API is unreachable? (The UI should display a friendly
-message, not break.)
-2. What happens if a user submits a comment with only whitespace?
-3. What happens if a user submits extremely long input (e.g., 10,000 characters)?
-4. What happens if the user rapidly double-clicks the submit button?
+message, not break.) We handle this edge case by sending out an message that says we could not load the comments but all pages are sill acessible.
+2. What happens if a user submits a comment with only whitespace? There is an error that says to please enter something into the text box.
+3. What happens if a user submits extremely long input (e.g., 10,000 characters)? there is a message that appears becuase we have both in our sql table and javascript to limit the length of the inputs.
+4. What happens if the user rapidly double-clicks the submit button? The sql table handles duplicate inputs.
 
 ## Install the Database
 
