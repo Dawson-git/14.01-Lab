@@ -2,22 +2,26 @@ extends layout
 
 block content
   h1= title
+
   if error
     p.error= error
-  else if items && items.length
-    p Database content loaded for this page:
-    ul
+
+  p Share your thoughts about our donuts below.
+
+  form.comments-form(method='post' action='/comments')
+    label(for='name') Name:
+    input(type='text' id='name' name='name' required value=(form && form.name) )
+    label(for='comment') Comment:
+    textarea(id='comment' name='comment' required)= (form && form.comment) || ''
+    button(type='submit') Submit Comment
+
+  if items && items.length
+    h2 Recent comments
+    ul.comments-list
       each item in items
-        li= item.task
+        li.comments-list__item
+          strong= item.name
+          p= item.comment
+          span.comments-list__date= item.created_at
   else
     p No comments are available yet.
-
-block content
-  h1= title
-  p Share your thoughts about our donuts below.
-  form(method='post' action='/comments')
-    label(for='name') Name:
-    input(type='text' id='name' name='name' required)
-    label(for='comment') Comment:
-    textarea(id='comment' name='comment' required)
-    button(type='submit') Submit Comment
