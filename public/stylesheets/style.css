@@ -3,6 +3,7 @@ body {
   margin: 0;
 }
 
+/* HEADER */
 .site-header {
   padding: 20px 24px;
   background-color: #10291D;
@@ -67,13 +68,30 @@ body {
   display: none;
 }
 
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 75%;
-  height: auto;
-  margin-top: 1rem;
+ /* MENU */
+.menu_header {
+  padding: 2px 2px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.menu_subheader {
+  padding: 2px 2px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.bottom_border {
+  border-bottom: 1px solid black;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.menu_header_description {
+  /* padding: top right bottom left; */
+  padding: 0 10px 20px 10px;
+  text-align: center;
+  font-size: 1.25rem;
 }
 
 a {
