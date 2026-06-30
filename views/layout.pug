@@ -18,7 +18,15 @@ html(lang="en")
             li: a(href="/menu") Menu
             li: a(href="/about") Our Story
             li: a(href="/comments") Comments
-            li: a.nav__order-btn(href="#order") Order Now
+            li.nav__order-dropdown
+              button.nav__order-btn(type="button" aria-expanded="false" aria-haspopup="true")
+                span Order Now
+                span.nav__order-caret(aria-hidden="true") ▾
+              .nav__order-menu(role="menu")
+                p.nav__order-menu-title Order online for pickup or delivery
+                a.order_link(href="https://www.ubereats.com/" target="_blank" rel="noopener noreferrer") UberEats
+                a.order_link(href="https://www.doordash.com/" target="_blank" rel="noopener noreferrer") DoorDash
+                a.order_link(href="https://www.grubhub.com/" target="_blank" rel="noopener noreferrer") Grubhub
           button.nav_toggle(aria-label="Toggle navigation menu" aria-expanded="false")
             span
             span
@@ -28,30 +36,29 @@ html(lang="en")
       block content
       footer.site-footer
         .footer__inner
-
           .footer__brand
-            //- TODO: Brand 
-            //- TODO: Tagline: "Family-owned since 1992"
+            p Family-owned since 1992
+            p.footer__brand-tag Downtown Donuts | 123 Main Street, Downtown | (555) 867-5309 | www.downtowndonuts.com
 
           .footer__links
             h3 Order Online
             ul
-              //- TODO: Add links to UberEats, DoorDash, Grubhub
-              //- These can be placeholder "#" URLs for now
+              li: a(href="https://www.ubereats.com/" target="blank") UberEats
+              li: a(href="https://www.doordash.com/" target="blank") DoorDash
+              li: a(href="https://www.grubhub.com/" target="blank") Grubhub
+
+          .footer__hours
+            h3 Open Daily
+            p Mon-Fri 6AM-6PM
+            p Sat-Sun 7AM-4PM
 
           .footer__links
             h3 Visit Us
             ul
-              //- TODO: Add address lines and opening hours
+              li 123 Main Street, Downtown
+              li Downtown Donuts
 
-          .footer__links
-            h3 Connect
-            ul
-              //- TODO: Add links to Menu, Our Story, Comments
-
-        //- Copyright line
-        p.footer__copy &copy; 2026 Downtown Donuts. All rights reserved.
-
+        p.footer__copy © 2026 Downtown Donuts. All rights reserved.
 
     //- Load client-side JavaScript 
-    script(src="/js/main.js")
+    script(src="/javascripts/main.js")

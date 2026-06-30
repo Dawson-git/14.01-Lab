@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
+html, body {
+  min-height: 100%;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* HEADER */
@@ -56,16 +69,88 @@ body {
   gap: 1rem;
 }
 
-.nav_links li a,
+.nav_links > li > a,
 .nav__order-btn {
   color: #F7F7F7;
   text-decoration: none;
 }
 
+.nav__order-dropdown {
+  position: relative;
+  color: #F7C64A;
+}
+
+.nav__order-menu a {
+  color: #10291D;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0;
+}
+
 .nav__order-btn {
   padding: 0.5rem 1rem;
-  background: #00B7FF;
+  background: #F7C64A;
   border-radius: 999px;
+  border: none;
+  color: #10291D;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font: inherit;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.nav__order-btn:hover,
+.nav__order-btn:focus-visible {
+  background: #e6b83f;
+  outline: none;
+}
+
+.nav__order-caret {
+  font-size: 0.8rem;
+  transition: transform 0.2s ease;
+}
+
+.nav__order-btn[aria-expanded="true"] .nav__order-caret {
+  transform: rotate(180deg);
+}
+
+.nav__order-menu {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  min-width: 220px;
+  display: none;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 0.85rem;
+  border-radius: 0.8rem;
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+  z-index: 100;
+}
+
+.nav__order-menu.is-open {
+  display: flex;
+}
+
+.nav__order-menu-title {
+  margin: 0 0 0.25rem;
+  color: #10291D;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.nav__order-menu a {
+  color: #10291D;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.25rem 0;
+}
+
+.nav__order-menu a:hover {
+  color: #F7C64A;
 }
 
 .nav_toggle {
@@ -119,14 +204,70 @@ body {
   display: none;
 }
 
-.feature-left {
-  flex: 0 0 28%;
+.site-footer {
+  background: #10291D;
+  color: #F7F7F7;
+  padding: 40px 24px 24px;
+  margin-top: auto;
 }
 
-.feature-center {
-  flex: 1 1 auto;
+.footer__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer__brand p {
+  margin: 0 0 0.75rem;
+  color: #e8e8e8;
+}
+
+.footer__brand-tag {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+  line-height: 1.6;
+}
+
+.footer__links h3,
+.footer__hours h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer__links ul,
+.footer__hours {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__links li,
+.footer__hours p {
+  margin: 0 0 0.65rem;
+  color: #d7d7d7;
+}
+
+.footer__links a {
+  color: #F7F7F7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: #00B7FF;
+}
+
+.footer__copy {
   text-align: center;
-  color: #555;
+  margin: 24px auto 0;
+  max-width: 1200px;
+  color: #aeb4b8;
+  font-size: 0.9rem;
 }
 
 .feature-right {
