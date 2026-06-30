@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
 
+/* ============================================================================
+   GLOBAL STYLES
+   ============================================================================ */
+
 html, body {
   min-height: 100%;
 }
@@ -20,7 +24,14 @@ main {
   flex-direction: column;
 }
 
-/* HEADER */
+a {
+  color: #00B7FF;
+}
+
+/* ============================================================================
+   HEADER / NAVIGATION
+   ============================================================================ */
+
 .site-header {
   padding: 20px 24px;
   background-color: #10291D;
@@ -157,8 +168,11 @@ main {
   display: none;
 }
 
- /* MENU */
-.menu_header {
+/* ============================================================================
+   HOME PAGE - HERO SECTION
+   ============================================================================ */
+
+.home-hero {
   padding: 20px 10px 10px 10px;
   text-align: center;
   font-size: 3rem;
@@ -284,7 +298,7 @@ main {
   min-height: 320px;
   border-radius: 1.25rem;
   overflow: hidden;
-  background: linear-gradient(135deg, rgba(16, 41, 29, 0.9), rgba(16, 41, 29, 0.5)), url('https://via.placeholder.com/1200x600?text=Downtown+Donuts') center/cover;
+  background: linear-gradient(135deg, rgba(16, 41, 29, 0.9), rgba(16, 41, 29, 0.5)), url('https:placeholder5555464321.com') center/cover;
   display: flex;
   align-items: flex-end;
   justify-content: flex-start;
@@ -361,12 +375,70 @@ main {
   line-height: 1.5;
 }
 
+/* ============================================================================
+   MENU PAGE
+   ============================================================================ */
+
+.menu_header {
+  padding: 20px 10px 10px 10px;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.menu_subheader {
+  padding: 2px 2px;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.menu_header_description {
+  /* padding: top right bottom left; */
+  padding: 0 10px 10px 10px;
+  text-align: center;
+  font-size: 1.25rem;
+  opacity: 0.7;
+}
+
+.bottom_border {
+  border-bottom: 1px solid black;
+  width: 60%;
+  margin: 0 auto;
+}
+
+/* Featured menu row (boxed item with center text and right price) */
+.feature-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+  padding: 12px 100px; /* increased horizontal padding */
+  max-width: 980px;
+  margin: 1.25rem auto;
+  background: #fff;
+  flex-wrap: wrap;
+}
+
+.feature-row.feature-extended {
+  padding: 16px 100px;
+}
+
+.feature-row.feature-extended .feature-left {
+  flex: 1 1 100%;
+}
+
+.feature-row.feature-extended .feature-center,
+.feature-row.feature-extended .feature-right {
+  display: none;
+}
+
 .feature-right {
   flex: 0 0 28%;
   text-align: right;
 }
 
-.feature-title { 
+.feature-title {
   margin: 0;
   font-weight: 800;
   letter-spacing: 0.6px;
@@ -387,22 +459,8 @@ main {
   font-weight: 800;
 }
 
-.menu_header_description {
-  /* padding: top right bottom left; */
-  padding: 0 10px 10px 10px;
-  text-align: center;
-  font-size: 1.25rem;
-  opacity: 0.7;
-}
-
+/* Donut Menu */
 .donut_menu {
-  list-style: none;
-  max-width: 700px;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
-}
-
-.general_menu {
   list-style: none;
   max-width: 700px;
   margin: 2rem auto;
@@ -418,18 +476,25 @@ main {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.general_item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-bottom: 1px solid #e0e0e0;
+.donut_item_text {
+  flex: 1;
 }
 
-.general_item_price {
-  display: inline-flex;
-  align-items: center;
+.menu_item_name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.menu_item_description {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.menu_item_price {
+  font-weight: 1000;
+  white-space: nowrap;
 }
 
 .donut_hole_footer {
@@ -441,14 +506,33 @@ main {
   border-bottom: 1px solid #e0e0e0;
 }
 
-.donut_item_text {
-  flex: 1;
+/* General Menu */
+.general_menu {
+  list-style: none;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.general_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
 .general_item_text {
   flex: 1;
 }
 
+.general_item_price {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Drinks Menu */
 .drinks_menu {
   list-style: none;
   max-width: 700px;
@@ -532,30 +616,84 @@ main {
   }
 }
 
-.menu_item_name {
-  margin: 0;
-  font-size: 1.25rem;
-  font-weight: 800;
+/* ============================================================================
+   ABOUT PAGE
+   ============================================================================ */
+
+.about {
+  padding: 0px 0px 5px 40px;
 }
 
-.menu_item_description {
-  margin: 0.25rem 0 0;
-  color: #666;
-  font-size: 0.95rem;
-}
-
-.menu_item_price {
-  font-weight: 1000;
-  white-space: nowrap;
-}
-
-.pagebreak{
+.pagebreak {
   padding: 50px;
 }
 
-.about{
-  padding: 0px 0px 5px 40px;
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+.site-footer {
+  background: #10291D;
+  color: #F7F7F7;
+  padding: 40px 24px 24px;
+  margin-top: auto;
 }
-a {
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1.5rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer__brand p {
+  margin: 0 0 0.75rem;
+  color: #e8e8e8;
+}
+
+.footer__brand-tag {
+  font-size: 0.95rem;
+  color: #cfd8dc;
+  line-height: 1.6;
+}
+
+.footer__links h3,
+.footer__hours h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.footer__links ul,
+.footer__hours {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__links li,
+.footer__hours p {
+  margin: 0 0 0.65rem;
+  color: #d7d7d7;
+}
+
+.footer__links a {
+  color: #F7F7F7;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
   color: #00B7FF;
+}
+
+.footer__copy {
+  text-align: center;
+  margin: 24px auto 0;
+  max-width: 1200px;
+  color: #aeb4b8;
+  font-size: 0.9rem;
 }
