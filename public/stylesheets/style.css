@@ -553,6 +553,9 @@ main {
   padding: 50px;
 }
 
+.about{
+  padding: 0px 0px 5px 40px;
+}
 a {
   color: #00B7FF;
 }
