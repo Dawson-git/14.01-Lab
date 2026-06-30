@@ -1,16 +1,12 @@
 # CS208 Full Stack Final Project - Donut Shop Application
 
-- Name: John Doe
-- GitHub: [https://github.com/johndoe](https://github.com/johndoe)
+- Name: DawsonvGardels
+- GitHub: [https://github.com/Dawson-git/14.01-Lab](https://github.com/Dawson-git/14.01-Lab)
 - Term: Spring 2026
 
 ## Project Description
 
-This is my full-stack application for CS208, built with node.js. I built a web
-application for a small donut shop that allows users to view and order donuts
-online. The application uses Express for the backend and MariaDB (MySQL) for the
-database. Please read the following instructions carefully because some of the
-setup only needs to be done once.
+A prototype website for Downtown Donuts. Built with Node.js. This website is for a small donut shop that allows users to read about the shop, view the menu, and see comments from other users. The site is built to be semi-modular, with the ability to easily add new menu items in the backend code. The backend is built with Express, and the comments feature uses a MariaDB SQL database to store and retrieve customer comments. All CSS styling is written by hand and does not use any frameworks. Please read the following instructions carefully because some of the setup only needs to be done once.
 
 ## Install the Database
 
@@ -27,8 +23,7 @@ only need to run this script once per Codespace.
 Create the initial tables by running the following command:
 
 ```bash
-sudo mysql -u root -p < ./setup_scripts/create_demo_table.sql
-```
+sudo mysql -u root -p < ./setup_scripts/create_tables.sql
 
 ## Install Dependencies
 
