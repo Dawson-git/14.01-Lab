@@ -170,6 +170,13 @@ body {
   padding: 0 1.5rem;
 }
 
+.general_menu {
+  list-style: none;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
 .donut_menu_item {
   display: flex;
   justify-content: space-between;
@@ -177,6 +184,20 @@ body {
   gap: 1rem;
   padding: 1rem 0;
   border-bottom: 1px solid #e0e0e0;
+}
+
+.general_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.general_item_price {
+  display: inline-flex;
+  align-items: center;
 }
 
 .donut_hole_footer {
@@ -189,6 +210,10 @@ body {
 }
 
 .donut_item_text {
+  flex: 1;
+}
+
+.general_item_text {
   flex: 1;
 }
 
