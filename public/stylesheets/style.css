@@ -270,6 +270,97 @@ main {
   font-size: 0.9rem;
 }
 
+.home-hero {
+  display: grid;
+  gap: 1.25rem;
+  padding: 2rem 1.5rem 3rem;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.home-hero__featured {
+  position: relative;
+  min-height: 320px;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(16, 41, 29, 0.9), rgba(16, 41, 29, 0.5)), url('https://via.placeholder.com/1200x600?text=Downtown+Donuts') center/cover;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1.5rem;
+}
+
+.home-hero__featured-image{
+  width: 60%;
+  height: auto;
+}
+
+.home-hero__overlay {
+  max-width: 500px;
+  color: #F7F7F7;
+}
+
+.home-hero__title {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+}
+
+.home-hero__text {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-hero__link {
+  display: inline-block;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: #F7C64A;
+  color: #10291D;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.home-hero__cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.home-hero__card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.home-hero__image {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.home-hero__card-content {
+  padding: 1rem;
+}
+
+.home-hero__card-content h2 {
+  margin: 0 0 0.35rem;
+  color: #10291D;
+  font-size: 1.1rem;
+}
+
+.home-hero__card-content p {
+  margin: 0;
+  color: #666;
+  line-height: 1.5;
+}
+
 .feature-right {
   flex: 0 0 28%;
   text-align: right;
