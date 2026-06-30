@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Italianno&display=swap');
+
 body {
-  font: 14px "Montserrat Regular";
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
   margin: 0;
 }
 
@@ -22,7 +26,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font: "Italianno Regular";
+  font-family: "Italianno", cursive;
 }
 
 .nav_logo {
@@ -89,9 +93,47 @@ body {
 
 .menu_header_description {
   /* padding: top right bottom left; */
-  padding: 0 10px 20px 10px;
+  padding: 0 10px 10px 10px;
   text-align: center;
   font-size: 1.25rem;
+  opacity: 0.7;
+}
+
+.donut_menu {
+  list-style: none;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+.donut_menu_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.donut_item_text {
+  flex: 1;
+}
+
+.menu_item_name {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.menu_item_description {
+  margin: 0.25rem 0 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.menu_item_price {
+  font-weight: 1000;
+  white-space: nowrap;
 }
 
 a {
